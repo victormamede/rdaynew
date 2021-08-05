@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import Model from '../components/model';
+import { useLoader } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 function Page() {
   return (
@@ -49,7 +51,13 @@ function Page() {
 }
 
 export default function Home() {
+  // preload
+  const gltf = useLoader(GLTFLoader, '/monkey/scene.gltf');
   const [lights, setLights] = useState(false);
+
+  if (gltf == null) {
+    return 'Carregando... ';
+  }
 
   if (lights) {
     return (
