@@ -1,11 +1,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import {
-  PerspectiveCamera,
-  OrbitControls,
-  Environment,
-} from '@react-three/drei';
+import { PerspectiveCamera, Environment } from '@react-three/drei';
 import { AnimationMixer, Euler, Vector3 } from 'three';
 
 function Monke(props) {
