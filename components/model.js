@@ -68,8 +68,8 @@ export default function Model({ className }) {
       <Suspense fallback={null}>
         <group position={[0, -1, 0]}>
           <Monke />
+          <Environment preset='forest' />
         </group>
-        <Environment preset='forest' />
       </Suspense>
     </Canvas>
   );
